@@ -7,7 +7,7 @@ exports.config = {
     /**
      * Protractor specific
      */
-    allScriptsTimeout: 11000,
+    allScriptsTimeout: 110000,
     disableChecks: true,
 
     beforeLaunch: () => {

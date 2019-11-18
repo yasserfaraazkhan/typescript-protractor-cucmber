@@ -1,6 +1,7 @@
 import { expect } from '../config/helpers/chai-imports';
 import { defineSupportCode } from 'cucumber';
 import { browser, by, element } from 'protractor';
+import { homePageInstance } from "../pageObjects/homePage";
 
 defineSupportCode(({Given, When, Then}) => {
     Given(/^I am on homepage$/, givenVisitHomepage);
@@ -10,8 +11,7 @@ defineSupportCode(({Given, When, Then}) => {
 
     When(/^I enter "([^"]*)" as city name to search$/, searchInvalid);
      async function searchInvalid(cityName: string) {
-        await element(by.xpath('//*[@placeholder="Your city name"]')).sendKeys(cityName);
-        await element(by.css('button.btn.btn-orange')).click();
+        homePageInstance.enterCityToSearch(cityName);
       }
 
     When(/^I click on "([^"]*)" from navigation menu$/,verifyNavigationbar);
@@ -22,7 +22,7 @@ defineSupportCode(({Given, When, Then}) => {
     Then(/^I verify url to have "([^"]*)"$/,verifyUrlToHave);
     async function verifyUrlToHave(menuItem: string){
         browser.getCurrentUrl().then((url: string) => {
-            expect(url).to.have(menuItem);
+            expect(url.includes(menuItem)).to.be.true;
         })
     }
 
