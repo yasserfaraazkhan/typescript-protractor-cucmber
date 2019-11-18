@@ -1,18 +1,23 @@
-import { expect } from '../config/helpers/chai-imports';
-import { defineSupportCode } from 'cucumber';
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 class HomePage {
 
-    private searchCityTextBox = element(by.xpath('//*[@placeholder="Your city name"]'));
+    private BASE_URL: string = "https://openweathermap.org/";
+    private searchCityTextBox: ElementFinder= element(by.xpath('//*[@placeholder="Your city name"]'));
+    private searchCityButton: ElementFinder = element(by.css('button.btn.btn-orange'));
+
+    async loadBaseUrl() {
+        await browser.get(this.BASE_URL);
+    }
     /**
      * enterCityToSearch
         cityName: string
      */
     public async enterCityToSearch(cityName: string) {
         this.searchCityTextBox.sendKeys(cityName);
-        await element(by.css('button.btn.btn-orange')).click();
+        this.searchCityButton.click();
     }
+
 }
 
 export const homePageInstance = new HomePage()

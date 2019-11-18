@@ -6,13 +6,13 @@ import { homePageInstance } from "../pageObjects/homePage";
 defineSupportCode(({Given, When, Then}) => {
     Given(/^I am on homepage$/, givenVisitHomepage);
      async function givenVisitHomepage(): Promise<void>{
-        await browser.get('https://openweathermap.org/');
+        homePageInstance.loadBaseUrl();
     }
 
     When(/^I enter "([^"]*)" as city name to search$/, searchInvalid);
      async function searchInvalid(cityName: string) {
         homePageInstance.enterCityToSearch(cityName);
-      }
+    }
 
     When(/^I click on "([^"]*)" from navigation menu$/,verifyNavigationbar);
      async function verifyNavigationbar(menuItem: string){
