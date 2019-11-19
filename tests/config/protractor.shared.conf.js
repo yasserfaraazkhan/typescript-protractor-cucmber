@@ -9,6 +9,7 @@ exports.config = {
      */
     allScriptsTimeout: 110000,
     disableChecks: true,
+    SELENIUM_PROMISE_MANAGER: false,
 
     beforeLaunch: () => {
         console.log(`\n==========================================================================`);

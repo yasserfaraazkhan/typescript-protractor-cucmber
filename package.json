@@ -23,6 +23,7 @@
     "protractor-cucumber-framework": "~4.1.1",
     "protractor-flake": "^3.0.0",
     "protractor-multiple-cucumber-html-reporter-plugin": "^1.1.0",
+    "proxymise": "^1.0.2",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2",
