@@ -17,7 +17,7 @@ before_install:
  - google-chrome --version
 
 install:
-  - npm install
+  - npm install && npm run update-server
 
 script:
-  - npm run update-server && npm run start-server && npm run test
+  - npm run test
