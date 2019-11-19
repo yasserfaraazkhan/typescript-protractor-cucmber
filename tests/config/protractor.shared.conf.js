@@ -25,9 +25,9 @@ exports.config = {
     cucumberOpts: {
         compiler: "ts:ts-node/register",
         require: [
-            path.resolve(process.cwd(), './e2e-tests/**/after.scenario.ts'),
-            path.resolve(process.cwd(), './e2e-tests/**/cucumber.config.ts'),
-            path.resolve(process.cwd(), './e2e-tests/**/*.steps.ts')
+            path.resolve(process.cwd(), './tests/**/after.scenario.ts'),
+            path.resolve(process.cwd(), './tests/**/cucumber.config.ts'),
+            path.resolve(process.cwd(), './tests/**/*.steps.ts')
         ],
         format: 'json:.tmp/results.json',
         tags: argv.tags || ''
@@ -87,8 +87,8 @@ exports.config = {
  */
 function getFeatureFiles() {
     if (argv.feature) {
-        return argv.feature.split(',').map(feature => `${process.cwd()}/e2e-tests/**/${feature}.feature`);
+        return argv.feature.split(',').map(feature => `${process.cwd()}/tests/**/${feature}.feature`);
     }
 
-    return [`${process.cwd()}/e2e-tests/**/*.feature`];
+    return [`${process.cwd()}/tests/**/*.feature`];
 }

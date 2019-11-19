@@ -23,22 +23,6 @@ config.multiCapabilities = [
             }
         }
     }
-    // ,{
-    //     browserName: 'firefox',
-    //     shardTestFiles: true,
-    //     maxInstances: 5,
-    //     deviceProperties:{
-    //         browser: {
-    //             name: 'firefox',
-    //             version: 'latest'
-    //         },
-    //         device: 'local development machine',
-    //         platform: {
-    //             name: 'osx',
-    //             version: '10.12.6'
-    //         }
-    //     }
-    // }
 ];
 
 exports.config = config;
