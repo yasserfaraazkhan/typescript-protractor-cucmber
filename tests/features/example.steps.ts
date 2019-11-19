@@ -1,7 +1,6 @@
 import { expect } from '../config/helpers/chai-imports';
 import { defineSupportCode } from 'cucumber';
 import { homePageInstance } from "../pageObjects/homePage";
-import { signInPageInstance } from "../pageObjects/signInPage";
 
 defineSupportCode(({Given, When, Then}) => {
     Given(/^I am on homepage$/, givenVisitHomepage);

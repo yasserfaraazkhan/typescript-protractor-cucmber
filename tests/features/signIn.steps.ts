@@ -1,21 +1,22 @@
 import { expect } from '../config/helpers/chai-imports';
 import { defineSupportCode } from 'cucumber';
 import { signInPageInstance } from "../pageObjects/signInPage";
+import { homePageInstance } from "../pageObjects/homePage";
 
 defineSupportCode(({Given, When, Then}) => {
-    Given(/ˆI am on Sign In Page$/, gotoSignInPage);
-    function gotoSignInPage() {
+    Given('I am on Sign In Page', function () {
+        homePageInstance.loadBaseUrl();
         signInPageInstance.clickOnSignInLink();
-    }
-    When(/ˆI submit "([^"]*)" and "([^"]*)"$/,enterCredentials);
-    function enterCredentials(username: string, password: string) {
+      });
+
+    When(/^I submit "([^"]*)" and "([^"]*)"$/, enterCredentials);
+     function enterCredentials(username: string, password: string) {
         signInPageInstance.submitUserCredentials(username, password);
     }
-    
-    Then(/ˆI should verify "([^"]*)" message displayed$/, verifyErrorMessage);
-    async function verifyErrorMessage(errorMessage: string) {
+
+    Then('I should verify {string} message displayed', async function (errorMessage: string) {
         await signInPageInstance.getErrorMessageDisplayed().then((text)=> {
             expect(text).to.have.string(errorMessage.toLowerCase());
-        });
-    }
+      });
+    });
 });

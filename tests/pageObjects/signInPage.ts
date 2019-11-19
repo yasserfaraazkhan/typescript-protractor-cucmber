@@ -14,8 +14,9 @@ class SignInPage {
 
     async submitUserCredentials(username: string, password: string) {
         await this.userEmailTextBox.sendKeys(username);
-        await this.passwordTextBox.sendKeys(password);
-        await this.submitButton.click(); 
+        this.passwordTextBox.sendKeys(password);
+        this.submitButton.click();
+        console.log('passs*****');
     }
 
     async getErrorMessageDisplayed(): Promise<string>{

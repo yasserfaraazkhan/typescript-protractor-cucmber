@@ -77,13 +77,13 @@ exports.config = {
  *
  * <pre>
  *     // For 1 feature
- *     npm run e2e -- --feature=playground
+ *     npm run test -- --feature=playground
  *
  *     // For multiple features
- *     npm run e2e -- --feature=playground,dashboard,...
+ *     npm run test -- --feature=playground,dashboard,...
  *
  *     // Else
- *     npm run e2e
+ *     npm run test
  * </pre>
  */
 function getFeatureFiles() {
