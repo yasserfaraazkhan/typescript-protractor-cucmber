@@ -30,12 +30,8 @@ class HomePage {
     }
 
     async verifyMessageDisplayed(): Promise<string>{
-        browser.wait(()=> {
-            return this.invalidSearchMessage.isPresent()
-        });
-        const text: string = await this.invalidSearchMessage.getText();
-        console.log('***---- ', text);
-        return text;
+        const displayedText = await element(by.css('div.alert.alert-warning')).getText();
+        return displayedText.toLowerCase();
     }
 
     async verifyCityNameDiplayed(): Promise<string>{

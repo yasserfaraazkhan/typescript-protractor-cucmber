@@ -17,8 +17,7 @@ defineSupportCode(({Given, When, Then}) => {
     When(/^I click on "([^"]*)" from navigation menu$/,verifyNavigationbar);
      function verifyNavigationbar(menuItem: string){
          homePageInstance.clickOnMenuItems(menuItem);
-         console.log('PASS*******');
-     }
+      }
 
     Then(/^I verify url to have "([^"]*)"$/,verifyUrlToHave);
      async function verifyUrlToHave(menuItem: string){
@@ -30,8 +29,7 @@ defineSupportCode(({Given, When, Then}) => {
     Then(/^I verify "([^"]*)" message is shown$/, verifyCityNotFound);
      async function verifyCityNotFound(errorMessage: string) {
         await homePageInstance.verifyMessageDisplayed().then((text) => {
-            console.log('**** ',text);
-            expect(text).to.be.equal(errorMessage);    
+            expect(text).to.be.equal(errorMessage.toLowerCase());    
         });
     }
 
