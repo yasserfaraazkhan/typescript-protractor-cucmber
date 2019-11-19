@@ -16,8 +16,13 @@ before_install:
  - sudo dpkg -i google-chrome*.deb
  - google-chrome --version
 
+cache:
+  directories:
+    - "node_modules"
 install:
-  - npm install && npm run update-server
+  - npm install
 
 script:
+  - npm run update-server
+  - npm run start-server
   - npm run test
