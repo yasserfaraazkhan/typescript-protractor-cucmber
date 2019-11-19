@@ -17,11 +17,14 @@ defineSupportCode(({Given, When, Then}) => {
     When(/^I click on "([^"]*)" from navigation menu$/,verifyNavigationbar);
      function verifyNavigationbar(menuItem: string){
          homePageInstance.clickOnMenuItems(menuItem);
+         console.log('PASS*******');
      }
 
     Then(/^I verify url to have "([^"]*)"$/,verifyUrlToHave);
-     function verifyUrlToHave(menuItem: string){
-        expect(homePageInstance.verifyUrl(menuItem)).to.be.true;
+     async function verifyUrlToHave(menuItem: string){
+        await homePageInstance.getCurrentUrl().then((text) => {
+            expect(text.toLowerCase()).to.have.string(menuItem.toLowerCase());
+        });
     }
 
     Then(/^I verify "([^"]*)" message is shown$/, verifyCityNotFound);

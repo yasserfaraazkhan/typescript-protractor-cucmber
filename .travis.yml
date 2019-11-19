@@ -3,8 +3,6 @@ dist: trusty
 
 language: node_js
 node_js:
-  - "6"
-  - "7"
   - "8"
 
 before_install:
@@ -22,4 +20,4 @@ install:
   - npm install
 
 script:
-  - npm run test
+  - npm run update-server && npm run start-server && npm run test
