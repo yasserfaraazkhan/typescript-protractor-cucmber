@@ -13,4 +13,4 @@ To run,
    **npm run multi-browser** : executes in Chrome and Firefox browser
 
 ## Reports
-![Screenshot](Screenshot.png)
+![Screenshot](resources/Screenshot.png)
