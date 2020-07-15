@@ -10,8 +10,8 @@ install:
 
 script:
   # update Protractor and Selenium including ChromeDriver
-  - npm run webdriver-update
+  - npm run update-server
   # launch Selenium standalone in the background
-  - npm run webdriver-start
+  - npm run start-server
   # run Protractor E2E tests
   - npm run ci
