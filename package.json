@@ -6,7 +6,9 @@
     "start-server": "./node_modules/.bin/webdriver-manager start &",
     "update-server": "./node_modules/.bin/webdriver-manager update",
     "test": "protractor tests/config/protractor.e2e.conf.js",
-    "multi-browser": "protractor tests/config/protractor.multiBrowser.conf.js"
+    "protractor": "protractor",
+    "multi-browser": "protractor tests/config/protractor.multiBrowser.conf.js",
+    "ci": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox tests/config/protractor.e2e.conf.js"
   },
   "author": "yasser",
   "license": "ISC",
