@@ -12,5 +12,4 @@ install:
   - npm install
 
 script:
-  - npm run update-server
-  - npm run start-server && npm run ci
+  - npm run ci
