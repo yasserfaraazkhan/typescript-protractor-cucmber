@@ -19,8 +19,8 @@ Feature: Proractor E2E test cases
     Then I verify url to have "<menuItem>"
   Examples:
   |menuItem|
-  |city|
   |guide|
   |api|
   |price|
-  |stations|
+  |examples|
+  |weathermap|
