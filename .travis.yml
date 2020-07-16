@@ -1,15 +1,17 @@
-dist: xenial
+language: node_js
+node_js:
+  - "10.4.1"
+sudo: true
+
 addons:
   chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
-cache:
-  directories:
-    - "node_modules"
-install:
-  - npm install
+branches:
+  only:
+    - master
+
+before_script:
+  - npm i
 
 script:
   - npm run ci
