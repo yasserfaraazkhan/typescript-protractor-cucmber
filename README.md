@@ -3,6 +3,9 @@
 [![Build Status](https://travis-ci.com/johncena123456/typescript-protractor-cucmber.svg?branch=master)](https://travis-ci.com/johncena123456/typescript-protractor-cucmber)
 
 
+![CI](https://github.com/johncena123456/typescript-protractor-cucmber/workflows/CI/badge.svg?branch=master)
+
+
 Install Protractor globally using the command ***npm install protractor –g** or 
 use the command ***npm install protractor** for a particular project.
 
